@@ -6,13 +6,16 @@
   apt_key: url=http://nginx.org/keys/nginx_signing.key
 
 - name: add nginx repos
-  apt_repository: repo={{ item }}
+  apt_repository: repo='{{item}}'
   with_items:
     - 'deb http://nginx.org/packages/ubuntu/ precise nginx'
     - 'deb-src http://nginx.org/packages/ubuntu/ precise nginx'
 
 - name: Install nginx
   apt: name=nginx state=present
+
+- name: Make sure that the logs directory exsists
+     action: file path=/home/webmaster/logs state=directory
 
 - name: Copy nginx configuration for catch-all
   template: src={{item.src}} dest={{item.dest}}
