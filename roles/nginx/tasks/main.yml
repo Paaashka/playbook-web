@@ -10,7 +10,7 @@
   apt_repository: repo='deb-src http://nginx.org/packages/ubuntu/ precise nginx'
 
 - name: Install nginx
-  yum: name=nginx state=present
+  apt: name=nginx state=present
 
 - name: Copy nginx configuration for catch-all
   template: src=nginx.conf dest=/etc/nginx/nginx.conf
