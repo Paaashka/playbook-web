@@ -1,6 +1,6 @@
 ---
 - name: add user 'webmaster'
-  user: name='webmaster'
+  user: name='webmaster' shell='/bin/bash'
 
 - name: add nginx key
   apt_key: url=http://nginx.org/keys/nginx_signing.key
