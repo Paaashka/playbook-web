@@ -9,4 +9,6 @@
 
 - name: installing screen with config file
   apt: pkg=screen
+
+- name: install screen config file
   copy: src=.screenrc dest=/root/.screenrc
