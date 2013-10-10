@@ -1,5 +1,5 @@
 ---
 - name: clone yii repo
   git: repo=git://github.com/yiisoft/yii.git
-         dest=/home/webmaster/
+         dest=/home/webmaster/yii
          version=1.1.14
