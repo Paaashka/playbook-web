@@ -6,6 +6,8 @@
     - htop
     - iftop
     - curl
+    - git
+    - mercurial
 
 - name: installing screen with config file
   apt: pkg=screen
