@@ -15,7 +15,10 @@
   apt: name=nginx state=present
 
 - name: Make sure that the logs directory exsists
-  action: file path=/home/webmaster/logs state=directory
+  action: file path={{item}} state=directory owner=webmaster
+  with_items:
+      - /home/webmaster/logs
+      - /home/webmaster/sites
 
 - name: Copy nginx configuration for catch-all
   template: src={{item.src}} dest={{item.dest}}
