@@ -9,4 +9,6 @@
     - php5-mysql
     - php5-memcache
     - php-apc
-  notify: restart php-fpm
+
+- name: restart php-fpm
+  service: name=php-fpm state=restarted
