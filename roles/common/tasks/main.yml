@@ -1,0 +1,12 @@
+---
+- name: installing basic soft
+  apt: pkg=$item
+  with_items:
+    - mc
+    - htop
+    - iftop
+    - curl
+
+- name: installing screen with config file
+  apt: pkg=screen
+  copy: src=.screenrc dest=/root/.screenrc

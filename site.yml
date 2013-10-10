@@ -1,0 +1,18 @@
+---
+- name: Basic server configuration
+  hosts: all
+  roles:
+    - common
+  tags: commmon
+
+- name: Install MariaDB, Nginx, PHP-FPM with catch-all configuration
+  hosts: webservers
+  roles:
+    - mariadb
+    - nginx
+    - php-fpm
+
+- name: Install Yii
+  hosts: webservers
+  roles:
+    - yii

@@ -1,0 +1,10 @@
+startup_message off
+
+# Window title at the top of the screen
+caption always
+caption string "%{kw}%-w%{wr}%n %t%{-}%+w"
+
+autodetach on
+
+# Scrolling
+termcapinfo xterm* ti@:te@
