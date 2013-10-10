@@ -14,5 +14,5 @@
 
 - name: Copy nginx configuration for catch-all
   template: src=nginx.conf dest=/etc/nginx/nginx.conf
-  template: src=default-site.conf dest=/etc/nginx/site-available/default
+  template: src=default-site.conf dest=/etc/nginx/sites-available/default
   notify: restart nginx
