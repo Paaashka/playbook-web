@@ -1,4 +1,7 @@
 ---
+- name: Add PHP 5.5 repository
+  apt_repository: repo='ppa:ondrej/php5'
+
 - name: Install php-fpm and deps 
   apt: name={{ item }} state=present
   with_items:
@@ -9,4 +12,7 @@
     - php5-mysql
     - php5-memcache
     - php-apc
+
+- name: Configure PHP
+  ini_file: dest=/etc/php5/fpm/pool.d/www.conf section=www option=listen value='127.0.0.1:9000' backup=yes
   notify: restart php-fpm
