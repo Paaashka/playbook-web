@@ -1,6 +1,6 @@
 ---
 - name: installing basic soft
-  apt: pkg=$item
+  apt: pkg={{ item }}
   with_items:
     - mc
     - htop
