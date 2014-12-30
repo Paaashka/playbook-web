@@ -9,4 +9,5 @@
     - php5-mysql
     - php5-memcache
     - php-apc
+    - php-pear
   notify: restart php-fpm
